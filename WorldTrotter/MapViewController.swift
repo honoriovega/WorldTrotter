@@ -7,16 +7,28 @@
 //
 
 import UIKit
+import MapKit
 
 class MapViewController: UIViewController {
 
+    var mapView: MKMapView!
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("MapViewController loaded its view.")
 
         // Do any additional setup after loading the view.
     }
-
+    
+    
+    override func loadView() {
+        // Create a map view
+        mapView = MKMapView()
+        
+        // Set it as *the* view of this view controller
+        view = mapView
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

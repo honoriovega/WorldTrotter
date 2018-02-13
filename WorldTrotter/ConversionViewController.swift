@@ -47,9 +47,15 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("ConversionViewController loaded its view.")
-
         updateCelsiusLabel()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        // todo: based on time of day, on evening dislpay dark background
+        // during day, light background
+//        view.backgroundColor = .black
+
     }
 
     override func didReceiveMemoryWarning() {
