@@ -70,6 +70,7 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    // To prevent more than one decimal from being entered
     func textField(_ textField: UITextField,
                    shouldChangeCharactersIn range: NSRange,
                    replacementString string: String) -> Bool {
@@ -77,8 +78,9 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
         let existingTextHasDecimalSeparator = textField.text?.range(of: ".")
         let replacementTextHasDecimalSeparator = string.range(of: ".")
         
+        
         if existingTextHasDecimalSeparator != nil,
-            replacementTextHasDecimalSeparator != nil {
+            replacementTextHasDecimalSeparator != nil{
             return false
         } else {
             return true
