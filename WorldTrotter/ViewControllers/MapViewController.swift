@@ -31,6 +31,11 @@ class MapViewController: UIViewController {
         let segmentedControl = UISegmentedControl(items : ["Standard", "Hybrid", "Satellite"])
         segmentedControl.backgroundColor = UIColor.white.withAlphaComponent(0.5)
         segmentedControl.selectedSegmentIndex = 0
+        
+        segmentedControl.addTarget(self,
+                                   action: #selector(MapViewController.mapTypeChanged(_:)),
+                                   for: .valueChanged)
+        
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(segmentedControl)
 
@@ -49,15 +54,19 @@ class MapViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @objc func mapTypeChanged(_ segControl: UISegmentedControl) {
+        switch segControl.selectedSegmentIndex {
+        case 0:
+            mapView.mapType = .standard
+        case 1:
+            mapView.mapType = .hybrid
+        
+        case 2:
+            mapView.mapType = .satellite
+            
+        default:
+            break
+        }
     }
-    */
 
 }

@@ -101,6 +101,41 @@
             </objects>
             <point key="canvasLocation" x="1821" y="132"/>
         </scene>
+        <!--Browser-->
+        <scene sceneID="V7N-mX-tIc">
+            <objects>
+                <viewController id="kxT-j6-BrI" customClass="WebBrowserViewController" customModule="WorldTrotter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ydp-3t-sE6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gWZ-1Z-2xk">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gWZ-1Z-2xk" firstAttribute="leading" secondItem="cNi-dS-j8b" secondAttribute="leading" id="BD2-QZ-arf"/>
+                            <constraint firstItem="gWZ-1Z-2xk" firstAttribute="bottom" secondItem="cNi-dS-j8b" secondAttribute="bottom" id="I3S-Xz-zPH"/>
+                            <constraint firstItem="gWZ-1Z-2xk" firstAttribute="trailing" secondItem="cNi-dS-j8b" secondAttribute="trailing" id="JV9-je-CWo"/>
+                            <constraint firstItem="gWZ-1Z-2xk" firstAttribute="top" secondItem="ydp-3t-sE6" secondAttribute="top" id="LuE-JZ-OAl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cNi-dS-j8b"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Browser" image="BrowserIcon" id="Pc6-2t-ua2"/>
+                    <connections>
+                        <outlet property="myWebView" destination="gWZ-1Z-2xk" id="gjs-Os-9aO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2dH-No-YGJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2617.5" y="133.09859154929578"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="d7o-bp-lsx">
             <objects>
@@ -114,6 +149,7 @@
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="3Vr-Zj-uDk"/>
                         <segue destination="eOa-21-fAf" kind="relationship" relationship="viewControllers" id="o1g-KP-K2K"/>
+                        <segue destination="kxT-j6-BrI" kind="relationship" relationship="viewControllers" id="fr6-ob-095"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o98-vb-cQh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -122,6 +158,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="BrowserIcon" width="16" height="16"/>
         <image name="ConvertIcon" width="48" height="32"/>
         <image name="MapIcon" width="48" height="32"/>
     </resources>
